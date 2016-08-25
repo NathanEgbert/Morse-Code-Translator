@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MorseCodeTranslator.Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace MorseCodeTranslator
         static void Main(string[] args)
         {
 
-            ITranslation translate;
+            Translator translator = new Translator();
 
             Console.WriteLine("To translate to morse code press 1. \nTo translater from morse code press 2.");
             string input = Console.ReadLine();
@@ -20,17 +21,19 @@ namespace MorseCodeTranslator
             switch(input)
             {
                 case "1":
-                    translate = new AlphaToMorse();
+                   // translate = new AlphaToMorse();
                     break;
 
                 default:
-                    translate = new MorseToAlpha();
+                    //translate = new MorseToAlpha();
                     break;
 
             }
 
-            translate.Execute();
+
+
+            
         }
-        
+      
     }
 }
