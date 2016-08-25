@@ -54,9 +54,9 @@
     <Compile Include="TranslatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MorseCodeTranslator.Library\MorseCodeTranslatorLibrary.csproj">
+    <ProjectReference Include="..\MorseCodeTranslator.Library\MorseCodeTranslator.Library.csproj">
       <Project>{b6910212-c759-43d5-829f-7e71b5244fcd}</Project>
-      <Name>MorseCodeTranslatorLibrary</Name>
+      <Name>MorseCodeTranslator.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
