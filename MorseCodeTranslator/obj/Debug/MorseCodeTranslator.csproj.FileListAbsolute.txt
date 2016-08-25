@@ -1,0 +1,14 @@
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.exe.config
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.csprojResolveAssemblyReference.cache
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.exe
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.pdb
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.exe
+C:\Users\nathan.egbert\Desktop\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.pdb
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.csprojResolveAssemblyReference.cache
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.exe.config
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.exe
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.pdb
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.Library.dll
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\bin\Debug\MorseCodeTranslator.Library.pdb
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.exe
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator\obj\Debug\MorseCodeTranslator.pdb

@@ -1,0 +1,4 @@
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator.Library\bin\Debug\MorseCodeTranslator.Library.dll
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator.Library\bin\Debug\MorseCodeTranslator.Library.pdb
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator.Library\obj\Debug\MorseCodeTranslator.Library.dll
+C:\Users\nathan.egbert\Documents\GitHub\MorseCodeTranslator\MorseCodeTranslator.Library\obj\Debug\MorseCodeTranslator.Library.pdb
