@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MorseCodeTranslator.Library;
+using TranslatorConsole;
+
+
 
 namespace MorseCodeTranslatorTest
 {
@@ -31,6 +34,32 @@ namespace MorseCodeTranslatorTest
             char alphaConversion = translator.ConvertMorseToAlpha(morseInput);
 
             Assert.AreEqual('a', alphaConversion);
+
+        }
+
+        [TestMethod]
+        public void AlphaToMorseOutput()
+        {
+            OutPut outPut = new OutPut();
+
+            string userinput = "a";
+
+           string result = outPut.AlphaToMorseOutPut(userinput);
+
+           Assert.AreEqual(".-", result);       
+
+        }
+
+        [TestMethod]
+        public void MorseToAlphaOutput()
+        {
+            OutPut outPut = new OutPut();
+
+            string userinput = ".-";
+
+            char result = outPut.MorseToAlphaOutPut(userinput);
+
+            Assert.AreEqual('a', result);
 
         }
     }
