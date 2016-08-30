@@ -16,11 +16,11 @@ namespace MorseCodeTranslatorTest
 
             Translator translator = new Translator();
 
-            string alphaInput = "a";
+            string alphaInput = "s";
 
             string morseConversion = translator.ConvertALphaToMorse(alphaInput);
 
-            Assert.AreEqual(".-",morseConversion);
+            Assert.AreEqual("...",morseConversion);
 
         }
 
@@ -37,30 +37,6 @@ namespace MorseCodeTranslatorTest
 
         }
 
-        [TestMethod]
-        public void AlphaToMorseOutput()
-        {
-            OutPut outPut = new OutPut();
-
-            string userinput = "a";
-
-           string result = outPut.AlphaToMorseOutPut(userinput);
-
-           Assert.AreEqual(".-", result);       
-
-        }
-
-        [TestMethod]
-        public void MorseToAlphaOutput()
-        {
-            OutPut outPut = new OutPut();
-
-            string userinput = ".-";
-
-            char result = outPut.MorseToAlphaOutPut(userinput);
-
-            Assert.AreEqual('a', result);
-
-        }
+        
     }
 }
