@@ -14,29 +14,12 @@ namespace TranslatorConsole
             
             Translator translator = new Translator();
 
-            //Prompts the user to choose wich conversion type they want.
-            Console.WriteLine("Enter 1 for Alpha to morse, or 2 for Morse to alpha: ");
-            string userChoice = Console.ReadLine();
+            Console.WriteLine("Enter intput: ");
+            string userInput = Console.ReadLine();
 
-            //Picks the correct prompt and translator type depending upon the users choice of conversion type.
-            switch (userChoice)
-            {
-                case "1":
-                   Console.Write("Enter the charater to be converted to morse code: ");
-                   string alphaInput = Console.ReadLine();
-                   string morseOutPut = translator.ConvertALphaToMorse(alphaInput);
-                   Console.WriteLine(morseOutPut);
-                    break;
+            string results = translator.ChooseConversionType(userInput);
 
-                default:
-                   Console.Write("Enter the morse code to be converted to alpha characters: ");
-                   string morseInput = Console.ReadLine();
-                   char alphaOutPut = translator.ConvertMorseToAlpha(morseInput);
-                   Console.WriteLine(alphaOutPut);
-                    break;
-            }
-
-            
+            Console.WriteLine(results);
 
         }
     }

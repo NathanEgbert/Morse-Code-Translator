@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MorseCodeTranslator.Library
 {
     public class Translator
     {
 
-        Dictionary<char,string>
+        Dictionary<char, string>
         alphaToMorse = new Dictionary<char, string>()
             {
                 {'a',".-"},
@@ -35,11 +36,11 @@ namespace MorseCodeTranslator.Library
                 {'v',"...-"},
                 {'w',".--"},
                 {'x',"-..-"},
-                {'y',"-,--"},
+                {'y',"-.--"},
                 {'z',"--.."}
             };
 
-        Dictionary<string,char>
+        Dictionary<string, char>
         morseToAlpha = new Dictionary<string, char>()
             {
                 {".-",'a'},
@@ -70,7 +71,7 @@ namespace MorseCodeTranslator.Library
                 {"--..",'z'}
             };
 
-        
+
         /// <summary>
         /// Converts Alpha Characters to Morse Code,
         /// and returns the morse code translation as a string.
@@ -82,10 +83,10 @@ namespace MorseCodeTranslator.Library
             //converts the string input into a char
             char alphaChar = Convert.ToChar(alphaInput);
 
-            /*searchs if the alphaToMorse Dictionary contains the alphaChar key,
+            /* searches if the alphaToMorse Dictionary contains the alphaChar key,
              * and if it does it returns the morse code representation of that alpha character
              */
-            if(alphaToMorse.ContainsKey(alphaChar))
+            if (alphaToMorse.ContainsKey(alphaChar))
             {
                 return alphaToMorse[alphaChar];
             }
@@ -97,22 +98,56 @@ namespace MorseCodeTranslator.Library
 
         /// <summary>
         /// Converts Morse Code to its Alpha Character,
-        /// and returns the Alpha translation as a character.
+        /// and returns the Alpha translation as a string.
         /// </summary>
         /// <param name="morseInput"></param>
         /// <returns></returns>
-        public char ConvertMorseToAlpha(string morseInput)
+        public string ConvertMorseToAlpha(string morseInput)
         {
             //Searches for the Morse Code key and returns the alpha character version of it
-            if(morseToAlpha.ContainsKey(morseInput))
+            if (morseToAlpha.ContainsKey(morseInput))
             {
-                return morseToAlpha[morseInput];
+                string result = morseToAlpha[morseInput].ToString();
+                return result;
             }
             else
             {
-                return char.MinValue;
+                return string.Empty;
             }
-            
+
         }
+
+        /// <summary>
+        /// Takes the users input and decides which conversion type to use Alpha to Morse,
+        /// or Morse to Alpha.
+        /// Calls the appropriate method and then returns the converted results.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ChooseConversionType(string input)
+        {
+            //stores the morse code values 
+            StringBuilder outPutMorse = new StringBuilder();
+
+            MatchCollection findChar = Regex.Matches(input, "[a-z]");
+            
+
+            //for each character found in the input it will store the morsecode value in the list
+            foreach (Match match in findChar)
+            {
+                outPutMorse.Append(ConvertALphaToMorse(match.ToString()));
+            }
+
+            // sees if the morseToAlpha dictionary contains the morse code input and returns the character output.
+            if (morseToAlpha.ContainsKey(input))
+            {
+                return ConvertMorseToAlpha(input);
+            }
+
+            //returns the morse code
+            return outPutMorse.ToString();
+        }
+
+
     }
 }
