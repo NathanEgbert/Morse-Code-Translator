@@ -127,7 +127,7 @@ namespace MorseCodeTranslator.Library
         public string ConvertInput(string input)
         {
 
-            StringBuilder morseOutPut = new StringBuilder();
+            
 
             bool charMatch = Regex.IsMatch(input, "[a-zA-Z]");
             bool morseMatch = Regex.IsMatch(input, "^[.-]*$");
