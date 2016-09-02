@@ -15,11 +15,11 @@ namespace MorseCodeTranslatorTest
 
             Translator translator = new Translator();
 
-            string alphaInput = "s";
+            string alphaInput = "sos";
 
             string morseConversion = translator.ConvertALphaToMorse(alphaInput);
 
-            Assert.AreEqual("...",morseConversion);
+            Assert.AreEqual("...---...",morseConversion);
 
         }
 
@@ -54,11 +54,11 @@ namespace MorseCodeTranslatorTest
         {
             Translator translator = new Translator();
 
-            string inputAlpha = "s";
+            string inputAlpha = "sos";
 
             string outPutAlpha = translator.ConvertInput(inputAlpha);
 
-            Assert.AreEqual("...", outPutAlpha);
+            Assert.AreEqual("...---...", outPutAlpha);
 
         }
 
@@ -71,7 +71,7 @@ namespace MorseCodeTranslatorTest
 
             string result = translator.ConvertInput(morseInput);
 
-            Assert.AreEqual("No match found.",result);
+            Assert.AreEqual(string.Empty,result);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace MorseCodeTranslatorTest
         {
             Translator translator = new Translator();
 
-            string invalidInput = "!@#";
+            string invalidInput = "!";
 
             string result = translator.ConvertInput(invalidInput);
 

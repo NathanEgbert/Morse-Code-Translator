@@ -19,7 +19,11 @@ namespace TranslatorConsole
 
             //saves the result from the translation
             string results = translator.ConvertInput(userInput);
-
+            
+            if(results == string.Empty)
+            {
+                Console.WriteLine("No match found.");
+            }
             Console.WriteLine(results);
 
         }

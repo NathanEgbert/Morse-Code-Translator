@@ -81,19 +81,24 @@ namespace MorseCodeTranslator.Library
         public string ConvertALphaToMorse(string alphaInput)
         {
             //converts the string input into a char
-            char alphaChar = Convert.ToChar(alphaInput);
+            char[] alphaChar = alphaInput.ToCharArray();
+
+            StringBuilder morseOutput = new StringBuilder();
 
             /* searches if the alphaToMorse Dictionary contains the alphaChar key,
              * and if it does it returns the morse code representation of that alpha character
              */
-            if (alphaToMorse.ContainsKey(alphaChar))
+            foreach(char alpha in alphaChar)
+            if (alphaToMorse.ContainsKey(alpha))
             {
-                return alphaToMorse[alphaChar];
+                morseOutput.Append(alphaToMorse[alpha]);
             }
             else
             {
                 return string.Empty;
             }
+
+            return morseOutput.ToString();
         }
 
         /// <summary>
@@ -127,8 +132,6 @@ namespace MorseCodeTranslator.Library
         public string ConvertInput(string input)
         {
 
-            
-
             bool charMatch = Regex.IsMatch(input, "[a-zA-Z]");
             bool morseMatch = Regex.IsMatch(input, "^[.-]*$");
 
@@ -137,15 +140,8 @@ namespace MorseCodeTranslator.Library
             {
                 string morseResult = ConvertALphaToMorse(input);
 
-                if (morseResult == string.Empty)
-                {
-                    return "No match found.";
-                }
-                else
-                {
-                    return morseResult;
-                }
-
+                return morseResult;
+              
             }
             
             //checks if morseMatch is true
@@ -153,15 +149,7 @@ namespace MorseCodeTranslator.Library
             {
                 string alphaResult = ConvertMorseToAlpha(input);
 
-
-                if (alphaResult == string.Empty)
-                {
-                    return "No match found.";
-                }
-                else
-                {
-                    return alphaResult;
-                }
+                return alphaResult;
             }
 
             else
