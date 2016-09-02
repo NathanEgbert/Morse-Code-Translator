@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MorseCodeTranslator.Library;
+using System.Text.RegularExpressions;
 
 
-namespace MorseCodeTranslatorTest
+namespace MorseCodeTranslatorTest 
 {
     [TestClass]
-    public class TranslatorTests
+    public class TranslatorTests 
     {
         [TestMethod]
         public void AlphaToMorse()
@@ -36,33 +37,53 @@ namespace MorseCodeTranslatorTest
         }
 
         [TestMethod]
-        public void ChooseConversionTypeMorseInput()
+        public void ConversionInputMorse()
         {
             Translator translator = new Translator();
 
             string inputMorse = "...";
             
-            string outPutMorse = translator.ChooseConversionType(inputMorse);
+            string outPutMorse = translator.ConvertInput(inputMorse);
             
             Assert.AreEqual("s", outPutMorse);
             
         }
-        
+
         [TestMethod]
-        public void ChooseConversionTypeAlpaInput()
+        public void ConversionInputAlpha()
         {
             Translator translator = new Translator();
 
-            string inputAlpha = "sos";
+            string inputAlpha = "s";
 
-            string outPutAlpha = translator.ChooseConversionType(inputAlpha);
+            string outPutAlpha = translator.ConvertInput(inputAlpha);
 
-            Assert.AreEqual("...---...", outPutAlpha);
+            Assert.AreEqual("...", outPutAlpha);
 
         }
 
-    
+        [TestMethod]
+        public void ConversionInputMorseMapNotFound()
+        {
+            Translator translator = new Translator();
 
-        
+            string morseInput = "..........";
+
+            string result = translator.ConvertInput(morseInput);
+
+            Assert.AreEqual("No match found.",result);
+        }
+
+        [TestMethod]
+        public void ConversionInputInvalidInput()
+        {
+            Translator translator = new Translator();
+
+            string invalidInput = "!@#";
+
+            string result = translator.ConvertInput(invalidInput);
+
+            Assert.AreEqual("Invalid input", result);
+        }
     }
 }

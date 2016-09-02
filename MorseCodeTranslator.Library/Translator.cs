@@ -124,30 +124,50 @@ namespace MorseCodeTranslator.Library
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public string ChooseConversionType(string input)
+        public string ConvertInput(string input)
         {
-            //stores the morse code values 
-            StringBuilder outPutMorse = new StringBuilder();
 
-            MatchCollection findChar = Regex.Matches(input, "[a-z]");
+            StringBuilder morseOutPut = new StringBuilder();
+
+            bool charMatch = Regex.IsMatch(input, "[a-zA-Z]");
+            bool morseMatch = Regex.IsMatch(input, "^[.-]*$");
+
+            // checks if charMatch is true
+            if (charMatch)
+            {
+                string morseResult = ConvertALphaToMorse(input);
+
+                if (morseResult == string.Empty)
+                {
+                    return "No match found.";
+                }
+                else
+                {
+                    return morseResult;
+                }
+
+            }
             
-
-            //for each character found in the input it will store the morsecode value in the list
-            foreach (Match match in findChar)
+            //checks if morseMatch is true
+            else if (morseMatch)
             {
-                outPutMorse.Append(ConvertALphaToMorse(match.ToString()));
+                string alphaResult = ConvertMorseToAlpha(input);
+
+
+                if (alphaResult == string.Empty)
+                {
+                    return "No match found.";
+                }
+                else
+                {
+                    return alphaResult;
+                }
             }
 
-            // sees if the morseToAlpha dictionary contains the morse code input and returns the character output.
-            if (morseToAlpha.ContainsKey(input))
+            else
             {
-                return ConvertMorseToAlpha(input);
+                return "Invalid input";
             }
-
-            //returns the morse code
-            return outPutMorse.ToString();
         }
-
-
     }
 }

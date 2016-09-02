@@ -11,13 +11,14 @@ namespace TranslatorConsole
     {
         static void Main(string[] args)
         {
-            
+            //creates a new translator instance 
             Translator translator = new Translator();
 
             Console.WriteLine("Enter intput: ");
             string userInput = Console.ReadLine();
 
-            string results = translator.ChooseConversionType(userInput);
+            //saves the result from the translation
+            string results = translator.ConvertInput(userInput);
 
             Console.WriteLine(results);
 
